@@ -36,10 +36,10 @@ class EditarSenhas : AppCompatActivity() {
         btnAlterar= findViewById(R.id.botaoAlterar)
         tamanhoSenha=findViewById(R.id.tamanhoSenhaEdi)
 
-        val senhaEdi = intent.getParcelableExtra<Senhas>("senhas")
+        val senhaEdi = intent.getParcelableExtra<Senhas>("senha1")
 
         if (senhaEdi != null) {
-            val descricaoEditable = Editable.Factory.getInstance().newEditable(senhaEdi.nomeS)
+            val descricaoEditable = Editable.Factory.getInstance().newEditable(senhaEdi.senha1)
             nomeSenha.text = descricaoEditable
             tamanho.progress = senhaEdi.tamanho
             if (senhaEdi.maiusculo)

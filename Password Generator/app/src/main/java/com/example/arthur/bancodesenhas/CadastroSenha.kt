@@ -62,12 +62,21 @@ class CadastroSenha : AppCompatActivity() {
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }
+        }
 
-            this.btnCancelar.setOnClickListener {
-                finish()
-            }
+        this.btnCancelar.setOnClickListener {
+            val intent = Intent(this, TelaSenhas::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
 
-//            val senhaGerada = novaSenha(tamanho, caracterEspecial, numero, letraMaiuscula)
+
+
+
+
+
+//    val senhaGerada = novaSenha(tamanho, caracterEspecial, numero, letraMaiuscula)
 //
 //            val intentMain = Intent(this,TelaSenhas::class.java);
 //            startActivity(intentMain)
@@ -76,9 +85,6 @@ class CadastroSenha : AppCompatActivity() {
 //                putExtra("tamanho", tamanho)
 //                putExtra("descricao", descricao)
 //            }
-
-        }
-    }
 
 
 //        fun gerarSenha(tamanho: Int, caracterEspecial: Boolean, numero: Boolean, letraMaiusculas: Boolean): String {

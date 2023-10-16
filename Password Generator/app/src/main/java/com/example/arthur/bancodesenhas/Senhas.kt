@@ -5,7 +5,6 @@ import android.os.Parcelable
 import kotlin.random.Random
 
 class Senhas() : Parcelable{
-
     var tamanho = 0
     var nomeS = ""
     var numero : Boolean= false
