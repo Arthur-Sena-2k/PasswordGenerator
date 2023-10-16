@@ -12,14 +12,14 @@ class SenhaAuxiliar(context: Context, resource: Int, objects: List<Senhas>) :
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val convertView =
-            convertView ?: LayoutInflater.from(context).inflate(R.layout.lista_senha, parent, false)
+            convertView ?: LayoutInflater.from(context).inflate(R.layout.activity_lista_de_senha, parent, false)
 
-        val descricaoTextView: TextView = convertView.findViewById(R.id.descricaoTextView)
-        val tamanhoTextView: TextView = convertView.findViewById(R.id.tamanhoTextView)
+        val descricao: TextView = convertView.findViewById(R.id.DescricaoSenha)
+        val tamanho: TextView = convertView.findViewById(R.id.TamanhoDaSenha)
 
         val senha = getItem(position)
-        descricaoTextView.text = senha?.nomeS
-        tamanhoTextView.text = "(${senha?.tamanho})"
+        descricao.text = senha?.nomeS
+        tamanho.text = "(${senha?.tamanho})"
         return convertView
     }
 }

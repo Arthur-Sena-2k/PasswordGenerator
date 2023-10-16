@@ -4,8 +4,6 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -26,7 +24,7 @@ class TelaSenhas : AppCompatActivity() {
         listView =findViewById(R.id.listaSenhas)
         btAddSenha = findViewById(R.id.botaoAddSenha)
 
-        val auxiliar = SenhaAuxiliar(this, R.layout.lista_senha, senhaLista)
+        val auxiliar = SenhaAuxiliar(this, R.layout.activity_lista_de_senha, senhaLista)
         listView.adapter = auxiliar
 
         this.btAddSenha =findViewById(R.id.botaoAddSenha)

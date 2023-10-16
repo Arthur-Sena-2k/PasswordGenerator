@@ -27,14 +27,14 @@ class EditarSenhas : AppCompatActivity() {
         setContentView(R.layout.activity_editar_senhas)
 
         nomeSenha= findViewById(R.id.nomeSenha)
-        tamanhoSenha=findViewById(R.id.tamanhoSenha)
         tamanho=findViewById(R.id.seekBar)
+        caracterEspecial=findViewById(R.id.caixaCaracterEspecial)
+        numero=findViewById(R.id.caixaNumero)
+        letraMaiuscula=findViewById(R.id.caixaLetraMaiuscula)
+        btnExcluir=findViewById(R.id.botaoExcluir)
         btnCancelar=findViewById(R.id.botaoCancelar)
         btnAlterar= findViewById(R.id.botaoAlterar)
-        btnExcluir=findViewById(R.id.botaoExcluir)
-        letraMaiuscula=findViewById(R.id.caixaLetraMaiuscula)
-        numero=findViewById(R.id.caixaNumero)
-        caracterEspecial=findViewById(R.id.caixaCaracterEspecial)
+        tamanhoSenha=findViewById(R.id.tamanhoSenhaEdi)
 
         val senhaEdi = intent.getParcelableExtra<Senhas>("senhas")
 
@@ -67,10 +67,13 @@ class EditarSenhas : AppCompatActivity() {
                 apagarSenha(senhaEdi)
             }
 
-            btnCancelar.setOnClickListener() {
-                cancelar()
+            this.btnCancelar.setOnClickListener {
+                val intent = Intent(this, TelaSenhas::class.java)
+                startActivity(intent)
+                finish()
             }
         } else {
+//            erro
         }
     }
 
@@ -89,9 +92,9 @@ class EditarSenhas : AppCompatActivity() {
         finish()
     }
 
-    fun cancelar(){
-        finish()
-    }
+//    fun cancelar(){
+//        finish()
+//    }
 
     fun editarSenha(novaSenha: Senhas): Senhas {
         novaSenha.maiusculo = letraMaiuscula.isChecked

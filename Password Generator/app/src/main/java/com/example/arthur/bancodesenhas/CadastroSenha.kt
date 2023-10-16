@@ -61,8 +61,6 @@ class CadastroSenha : AppCompatActivity() {
                 intent.putExtra("novaSenha" ,novaSenha)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
-
-
             }
 
             this.btnCancelar.setOnClickListener {
